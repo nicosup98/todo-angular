@@ -1,0 +1,23 @@
+<div class="container mx-auto px-2 w-full">
+
+  <div *ngFor="let todo of todo_list()" class="flex flex-col gap-2">
+    <Todo [item]="todo"(changeStatus)="updateStatus($event)" (deleteTodo)="deleteTodoById($event)"></Todo>
+  </div>
+  <div class="flex flex-col gap-2">
+    <button class="btn btn-neutral" (click)="addTodo()">add Todo</button>
+    <button class="btn btn-neutral" (click)="saveToCache()">save in browser</button>
+  </div>
+
+  <ng-container *ngIf="canAddTodo()">
+    <div class="flex flex-col m-1 border-2 p-2 gap-2">
+      <input type="text" class="input input-borderer" [ngModel] = "newTodo().title" (change)="handleAddTodo($event)" placeholder="title">
+      <input type="text" class="input input-borderer" [ngModel] = "newTodo().description" (change)="handleAddTodoDescription($event)" placeholder="description">
+      <button class="btn btn-primary" (click)="insertTodo()">add</button>
+      <button class="btn btn-secondary" (click)="cancelAddTodo()">cancel</button>
+
+    </div>
+     </ng-container>
+</div>
+
+
+
