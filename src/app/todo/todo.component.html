@@ -1,4 +1,4 @@
-<div class="m-1" (click)="updateStatus()">
+<div class="m-1 todo" (click)="updateStatus()">
   <div class="flex flex-row gap-2 justify-between">
     <div class="flex flex-col w-full p-2" [ngClass]="{'rounded bg-green-100':item.state === 'doing','opacity-50 bg-gray-300 ': item.state === 'done'}">
      <h2 class="text-2xl" [ngClass]="item.state === 'done'? 'decoration-zinc-800': 'decoration-green-500'" [class.line-through]="item.state === 'done'" [class.underline]="item.state === 'doing'">{{item.title}}</h2>

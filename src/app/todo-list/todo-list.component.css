@@ -1,0 +1,34 @@
+.add-todo {
+  animation: add-todo-animation 0.2s ease;
+
+}
+
+@keyframes add-todo-animation{
+  from {
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.todo{
+  animation: todo-animation 0.15s ease;
+
+
+}
+
+@keyframes todo-animation {
+  from {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1
+  }
+}
